@@ -83,10 +83,10 @@ School.prototype.findStudent = function (name) {
         const student = course.students.find(s => s.name === name);
         if (student) {
             return {
-               
-
-
-            };
+               course: course.title,
+               info : student.getInfo(),
+               pass: student.isPass()
+               };
         }
     }
     return "Student not found";
@@ -95,5 +95,34 @@ School.prototype.findStudent = function (name) {
 
 // TEST AREA
 
+const mySchool = new School("Georgian");
 
+const math = new Course("Math");
+const english = new Course("English");
+const science = new Course("Science");
 
+const s1 = new Student("Alice", 20, 85);
+const s2 = new Student("Bob", 22, 75);
+const s3 = new Student("Charlie", 21, 90);
+
+math.addStudent(s1);
+math.addStudent(s2);
+math.addStudent(s3);
+
+english.addStudent(s1);
+english.addStudent(s2);
+english.addStudent(s3);
+
+science.addStudent(s1);
+science.addStudent(s2);
+science.addStudent(s3);
+
+console.log(math.listStudents());
+console.log(english.listStudents());
+console.log(science.listStudents());
+
+console.log(math.getAverage());
+console.log(english.getAverage());
+console.log(science.getAverage());
+
+console.log(mySchool.findStudent("Bob"));
