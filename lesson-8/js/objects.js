@@ -1,8 +1,20 @@
 const output = document.getElementById('output');
 
 /* STEP 1: Create an object (looks a lot like declaring a variable, but with empty braces), then open this page in a browser and enter 'person' in the console */
+const person = {
+    name: {
+        first: "Aiden",
+        last: "Piercey"
+    }
+};
+course: "Clientside JS"
+gender:"Male"
+age: 18
+greeting(); {
+    alert(`Hello, my name is ${this.name.first} ${this.name.last}, I am a ${this.age} year old.`);
+}
 
-
+output.textContent = person.greeting();
 /* STEP 2a: Add other data items to the above object, like name, age, gender, and interests */
 
 /* STEP 2b: Enter the following directly into the console:
@@ -19,7 +31,7 @@ const output = document.getElementById('output');
 // The object above is called an 'object literal' - in that we build each part of the object manually, rather than instatiating it from a class (which we will cover later). Objects can be easier to work with than arrays, as you can name each element
 
 /* STEP 5a: Dot syntax allows you to access the parts of an object - the first part is the namespace, and subsequent parts are used to access things encapsulated within the object. Access the first name, last name, and age of the person object, and put it inside the <p id="output"></p>. */
-
+output.textContent = `${person["name"]["first"]} ${person["name"]["last"]}, ${person["age"]} years old.`;
 
 /* STEP 5b: Update the above greeting() function inside the person object to return the string, instead of the alert(). */
 
